@@ -1,11 +1,5 @@
 <script setup lang="ts">
-// import type { IButton } from './types';
-interface IButton {
-	variant?: 'primary' | 'outlined' | 'text';
-	size?: 'md' | 'sm';
-	title?: string;
-	block?: boolean;
-}
+import type { IButton } from './types';
 
 defineProps<IButton>();
 </script>
@@ -15,6 +9,7 @@ defineProps<IButton>();
 		class="button"
 		:class="`button__${variant || 'primary'} button__${size || 'md'}`"
 		:title="title"
+		:type="type"
 	>
 		<slot />
 	</button>
