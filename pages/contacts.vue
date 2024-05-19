@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useHead({
-  title: "Контакты"
+  title: "Контакты | Compas"
 })
 </script>
 

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useHead({
-	title: 'Тарифы',
+	title: 'Тарифы | Compas',
 });
 </script>
 
