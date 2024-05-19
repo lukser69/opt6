@@ -7,13 +7,15 @@ useHead({
 <template>
 	<div class="main-page-root">
 		<CheckingFines class="main-page__checking-fines" />
+
+		<AdvantagesUsingCompas />
 	</div>
 </template>
 
 <style scoped lang="scss">
 .main-page-root {
 	& > .main-page__checking-fines {
-		margin: 79px 0 33px;
+		margin: 79px 0 98px;
 	}
 }
 </style>
