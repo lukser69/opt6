@@ -1,0 +1,11 @@
+:root {
+	--Primary: 5, 132, 254;
+	--Primary-Dark: 18, 83, 162;
+	--White: 255, 255, 255;
+	--Black: 0, 0, 0;
+
+	--Color: 0, 0, 0;
+	--Color-Secondary: 143, 143, 143;
+
+	--Max-Width-Container: 1158px;
+}
