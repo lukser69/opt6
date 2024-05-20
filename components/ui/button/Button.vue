@@ -21,9 +21,12 @@ defineProps<IButton>();
 	position: relative;
 	border-radius: 7px;
 
+	display: flex;
+	align-items: center;
+	gap: 6px;
+
 	outline: none;
 	cursor: pointer;
-
 	user-select: none;
 
 	transition: all 0.3s ease-in-out;

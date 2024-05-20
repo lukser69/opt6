@@ -9,6 +9,8 @@ interface ICarFormState {
 	carRegistration: string;
 }
 
+const showVideoPlayer = ref<boolean>(false);
+
 const carFormRef = ref();
 
 const carForm = ref<ICarFormState>({
@@ -70,6 +72,27 @@ const schema = Yup.object().shape({
 					Проверить штрафы
 					<NuxtImg src="/assets/icons/arrowRight.svg" width="14" />
 				</UiButton>
+
+				<UiButton variant="outlined" @click.prevent="showVideoPlayer = true">
+					<NuxtImg src="/assets/icons/youtube.svg" width="30" />
+					О сервисе
+
+					<UiModal
+						v-if="showVideoPlayer"
+						@close-modal="showVideoPlayer = false"
+					>
+						<iframe
+							class="video-player"
+							src="https://www.youtube.com/embed/9YfVFQRXPAc?si=HEpYoILH0hysLPAQ"
+							title="YouTube video player"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							referrerpolicy="strict-origin-when-cross-origin"
+							allowfullscreen
+							autoplay
+						></iframe>
+					</UiModal>
+				</UiButton>
 			</div>
 
 			<div class="hint">
@@ -113,6 +136,17 @@ const schema = Yup.object().shape({
 			font-weight: 400;
 			line-height: 120%;
 		}
+	}
+}
+
+.video-player {
+	width: 960px;
+	height: 532px;
+}
+
+@media (max-width: $display-lg) {
+	.video-player {
+		width: 90%;
 	}
 }
 
