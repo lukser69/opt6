@@ -1,0 +1,1 @@
+import{u as e}from"./FjHm9-BV.js";import{f as t,o,c as a}from"./B1VOdcIW.js";const p=t({__name:"contacts",setup(n){return e({title:"Контакты | Compas"}),(s,c)=>(o(),a("h2",null,"Контакты"))}});export{p as default};

@@ -1,0 +1,1 @@
+import{u as e}from"./FjHm9-BV.js";import{f as t,o,c as a}from"./B1VOdcIW.js";const p=t({__name:"registration",setup(r){return e({title:"Регистрация | Compas"}),(n,s)=>(o(),a("h2",null,"Регистрация"))}});export{p as default};

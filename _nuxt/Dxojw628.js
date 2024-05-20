@@ -1,0 +1,1 @@
+import{u as e}from"./FjHm9-BV.js";import{f as t,o,c as a}from"./B1VOdcIW.js";const p=t({__name:"license-agreement",setup(n){return e({title:"Лицензионный договор | Compas"}),(r,s)=>(o(),a("h2",null,"Лицензионный договор"))}});export{p as default};

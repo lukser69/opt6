@@ -1,0 +1,1 @@
+import{u as e}from"./FjHm9-BV.js";import{f as o,o as t,c as a}from"./B1VOdcIW.js";const c=o({__name:"payment-information",setup(n){return e({title:"Информация об оплате | Compas"}),(r,m)=>(t(),a("h2",null,"Информация об оплате"))}});export{c as default};

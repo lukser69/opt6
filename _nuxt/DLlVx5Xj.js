@@ -1,0 +1,1 @@
+import{u as e}from"./FjHm9-BV.js";import{f as o,o as t,c as a}from"./B1VOdcIW.js";const p=o({__name:"index",setup(n){return e({title:"Документы | Compas"}),(r,s)=>(t(),a("h2",null,"Документы"))}});export{p as default};
