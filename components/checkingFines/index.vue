@@ -14,6 +14,8 @@
 </template>
 
 <style scoped lang="scss">
+@import '@/assets/styles/breakpoints.scss';
+
 .checking-fines {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -29,6 +31,16 @@
 			max-width: 100%;
 			max-height: 100%;
 			object-fit: cover;
+		}
+	}
+}
+
+@media (max-width: $display-md) {
+	.checking-fines {
+		grid-template-columns: 1fr;
+
+		.preview-application {
+			display: none;
 		}
 	}
 }

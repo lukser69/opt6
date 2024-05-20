@@ -13,12 +13,31 @@
 </template>
 
 <style scoped lang="scss">
+@import '@/assets/styles/breakpoints.scss';
+
 .default-layout {
 	min-height: 100dvh;
+	min-width: $display-sm;
 
 	& > .main-container {
-		width: var(--Max-Width-Container);
+		max-width: var(--Max-Width-Container);
 		margin: 0 auto;
+	}
+}
+
+@media (max-width: $display-xl) and (min-width: $display-md) {
+	.default-layout {
+		& > .main-container {
+			padding: 0 20px;
+		}
+	}
+}
+
+@media (max-width: $display-md) {
+	.default-layout {
+		& > .main-container {
+			padding: 0 10px;
+		}
 	}
 }
 </style>

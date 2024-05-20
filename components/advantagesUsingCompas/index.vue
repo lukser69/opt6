@@ -19,6 +19,8 @@ import { ADVANTAGES_USING_COMPAS_ITEMS } from './advantagesUsingCompas.data';
 </template>
 
 <style scoped lang="scss">
+@import '@/assets/styles/breakpoints.scss';
+
 .advantages-using-compas-root {
 	& > .advantages-using-compas__title {
 		margin: 0 0 33px;
@@ -33,6 +35,24 @@ import { ADVANTAGES_USING_COMPAS_ITEMS } from './advantagesUsingCompas.data';
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		gap: 35px;
+	}
+}
+
+@media (max-width: $display-xl) and (min-width: $display-md) {
+	.advantages-using-compas-root {
+		& > .advantages-using-compas__items {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 20px;
+		}
+	}
+}
+
+@media (max-width: $display-md) {
+	.advantages-using-compas-root {
+		& > .advantages-using-compas__items {
+			grid-template-columns: 1fr;
+			gap: 20px;
+		}
 	}
 }
 </style>

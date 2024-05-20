@@ -20,6 +20,8 @@ defineProps<{
 </template>
 
 <style scoped lang="scss">
+@import '@/assets/styles/breakpoints.scss';
+
 .carousel-card-root {
 	padding: 25px;
 	min-width: calc(100% / 3 - 35px / 2 - 35px / 6);
@@ -51,6 +53,20 @@ defineProps<{
 			font-weight: 400;
 			line-height: 120%;
 		}
+	}
+}
+
+@media (max-width: $display-xl) and (min-width: $display-md) {
+	.carousel-card-root {
+		min-width: calc(100% / 2 - 35px / 2);
+		max-width: calc(100% / 2 - 35px / 2);
+	}
+}
+
+@media (max-width: $display-md) {
+	.carousel-card-root {
+		min-width: 100%;
+		max-width: 100%;
 	}
 }
 </style>

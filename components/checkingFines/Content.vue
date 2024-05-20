@@ -81,6 +81,8 @@ const schema = Yup.object().shape({
 </template>
 
 <style scoped lang="scss">
+@import '@/assets/styles/breakpoints.scss';
+
 .content-root {
 	padding-right: 20px;
 	& > .content__title {
@@ -110,6 +112,16 @@ const schema = Yup.object().shape({
 			font-size: 13px;
 			font-weight: 400;
 			line-height: 120%;
+		}
+	}
+}
+
+@media (max-width: $display-md) {
+	.content-root {
+		padding-right: 0;
+
+		& > .content__title {
+			text-align: center;
 		}
 	}
 }

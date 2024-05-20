@@ -4,7 +4,7 @@ import { MENU_DATA } from './menu.data';
 
 <template>
 	<ul
-		class="navbar-menu flex items-center gap-7 hover:color-primary transition-color"
+		class="navbar-menu"
 	>
 		<li v-for="item in MENU_DATA" :key="item.url" class="navbar-menu__item">
 			<NuxtLink class="navbar-menu__link" :to="item.url">{{

@@ -4,6 +4,26 @@ import { DOCUMENTS_DATA } from './documents.data';
 const cardsList = ref<HTMLElement>();
 const activeViewSlide = ref<number>(1);
 
+const countViewCardsOnSlide = ref(0);
+
+const setCountViewCardsOnSlide = () => {
+	if (!cardsList.value) {
+		countViewCardsOnSlide.value = 0;
+		return;
+	}
+
+	const cardWidth = cardsList.value.children[0].getBoundingClientRect().width;
+	const carouselWidth = cardsList.value.getBoundingClientRect().width;
+
+	countViewCardsOnSlide.value = Math.floor(carouselWidth / cardWidth);
+};
+
+onMounted(() => {
+	setCountViewCardsOnSlide();
+
+	window.addEventListener('resize', setCountViewCardsOnSlide);
+});
+
 let position: number = 0;
 
 const onNextSlide = () => {
@@ -27,7 +47,7 @@ const onNextSlide = () => {
 			cardsList.value?.children.length - 1
 		].getBoundingClientRect().right;
 
-	position -= (cardWidth + cardsListGap) * 3;
+	position -= (cardWidth + cardsListGap) * countViewCardsOnSlide.value;
 	activeViewSlide.value++;
 
 	if (cardsListWidth < -position + carouselWidth) {
@@ -61,13 +81,14 @@ const onPrevSlide = () => {
 	const leftFirstCard =
 		cardsList.value?.children[0].getBoundingClientRect().left;
 
-	position += (cardWidth + cardsListGap) * 3;
+	position += (cardWidth + cardsListGap) * countViewCardsOnSlide.value;
 	activeViewSlide.value--;
 
 	if (position > 0) {
 		if (leftCarousel && leftCarousel + 29 === leftFirstCard) {
 			position = carouselWidth - cardsListWidth;
-			activeViewSlide.value = DOCUMENTS_DATA.length / 3;
+			activeViewSlide.value =
+				DOCUMENTS_DATA.length / countViewCardsOnSlide.value;
 		} else {
 			position = 0;
 			activeViewSlide.value = 1;
@@ -88,9 +109,9 @@ const onPrevSlide = () => {
 			/>
 		</div>
 
-		<div class="documents-carousel__toggler">
+		<div v-if="countViewCardsOnSlide" class="documents-carousel__toggler">
 			<div
-				v-for="viewSlide in DOCUMENTS_DATA.length / 3"
+				v-for="viewSlide in DOCUMENTS_DATA.length / countViewCardsOnSlide"
 				:key="viewSlide"
 				class="point"
 				:class="{ active: viewSlide === activeViewSlide }"

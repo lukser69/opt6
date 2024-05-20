@@ -34,6 +34,8 @@ const goToRegistration = async () => {
 </template>
 
 <style scoped lang="scss">
+@import '@/assets/styles/breakpoints.scss';
+
 .navbar-actions-root {
 	display: flex;
 	align-items: center;
@@ -64,6 +66,33 @@ const goToRegistration = async () => {
 
 		&:active {
 			color: color-mix(in srgb, rgb(var(--White)), rgb(var(--Primary)) 30%);
+		}
+	}
+}
+
+@media (max-width: $display-lg) {
+	.navbar-actions-root {
+		display: flex;
+		align-items: center;
+		gap: 30px;
+
+		& > .navbar-actions__phone {
+			display: none;
+		}
+
+		& > .navbar-actions__btn-auth {
+			padding-right: 5px;
+			padding-left: 5px;
+
+			color: rgb(var(--White));
+
+			&:hover {
+				color: color-mix(in srgb, rgb(var(--White)), rgb(var(--Primary)) 50%);
+			}
+
+			&:active {
+				color: color-mix(in srgb, rgb(var(--White)), rgb(var(--Primary)) 30%);
+			}
 		}
 	}
 }
