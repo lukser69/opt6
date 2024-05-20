@@ -10,6 +10,7 @@ defineProps<IButton>();
 		:class="`button__${variant || 'primary'} button__${size || 'md'}`"
 		:title="title"
 		:type="type"
+		:style="block ? 'display: block; width: 100%;' : ''"
 	>
 		<slot />
 	</button>

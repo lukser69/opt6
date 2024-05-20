@@ -3,4 +3,5 @@ export interface IButton {
   size?: 'md' | 'sm';
   title?: string;
   type?: "button" | "submit" | "reset";
+  block?: boolean;
 }

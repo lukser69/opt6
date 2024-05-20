@@ -32,9 +32,9 @@ const schema = Yup.object().shape({
 
 <template>
 	<div class="content-root">
-		<h2 class="content__title">
+		<h1 class="content__title">
 			Проверьте штрафы и зарегистрируйтесь в 1 клик
-		</h2>
+		</h1>
 
 		<VeeForm
 			ref="carFormRef"
